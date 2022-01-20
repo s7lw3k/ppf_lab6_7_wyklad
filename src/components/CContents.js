@@ -13,12 +13,12 @@ class CContent extends Component{
         const imgContext = require.context('../res/', false, /\.jpg$/);
         let img = {};
         this.imgs = imgContext.keys().reduce((icons, file) => {
-            const cname = imgContext(file).default;
+            const cname = imgContext(file);
             const label = file.slice(2,-4);
             img[label] = cname;
             return img;
         },{});
-      //  this.changeMsg = this.changeMsg.bind(this);
+       this.changeMsg = this.changeMsg.bind(this);
     }
     
     changeMsg = () =>{
@@ -27,7 +27,13 @@ class CContent extends Component{
     }
 
     render(){
-        // const items = [];
+        const tabData = this.txtData2().data;
+        const items = tabData.map((item) => (
+            <div id={`div${item.id}"`} className="contentsFlex">
+            <img className="contentsFlexImg" src={this.imgs[item.img]} alt=""/>
+            <p className="contentsFlexTxt">{item.text}</p>
+            </div>
+        ));
         // for(let i=0; i<this.txtData().count;i++){
         //     let value = this.txtData().text[i];
         //     items.push(
@@ -37,17 +43,10 @@ class CContent extends Component{
         //         </div>
         //     );
         // }
-        const tabData = this.txtData2().data;
-        const items = tabData.map((item) => (
-            <div id={`"div${item.id}"`} className="contentsFlex" >
-                <img className="contentsFlexImg" src={this.imgs[item.img]} alt="" />
-                <p className="contentsFlexTxt">{item.text}</p>
-            </div>
-        ));
         return(
         <div className="contentsDivCalss">
+            {items}
             <h1>
-                {items}
                 {this.state.msg}
             </h1>
             <button onClick={this.changeMsg}>Kliknijn aby poznać tajemnicę</button>

@@ -1,3 +1,19 @@
 .contentsDivCalss{
     background-color: lightgreen;
 }
+.contentsFlex{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+}
+.contentsFlexImg{
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 50px;
+}
+.contentsFlexTxt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

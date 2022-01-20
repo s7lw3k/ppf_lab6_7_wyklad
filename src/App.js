@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <CHeader aName="Sylwester" aFamili="Wieczorek"/>
-      {/* <CContents/> */}
+      <CContents/>
       <COuter/>
       <CFooter weather="słoneczna" temp="25">
         <p>Niebo jest bezchmurne, wiatr słaby.</p>
