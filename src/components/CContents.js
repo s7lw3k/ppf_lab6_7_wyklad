@@ -41,7 +41,7 @@ class CContent extends Component{
         //             <img className="contentsFlexImg" src={this.imgs['img'+(i+1)]} alt=""/>
         //             <p className="contentsFlexTxt">{value}</p>
         //         </div>
-        //     );
+        //      );
         // }
         return(
         <div className="contentsDivCalss">
